@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int pago, numhijos, edescolar, hijos1, hijos, viuda;
+  pago = 0;
+  cout << "Bienvenido al programa que le permitirá calcular el monto de ayuda mensual a recibir por parte del gobierno" << "\n";
+  cout << "Primera pregunta: ¿Tiene hijos?: " << "\n";
+  cout << "Si=1, No=2"<<"\n";
+  cin >> hijos;
+  if (hijos==1){
+    cout<<"Cuantos hijos tienes?: ";
+    cin>>numhijos;
+    switch (numhijos)
+  {
+  case 1:
+  case 2:
+     pago = 70;
+    cout << "Tienes hijos en edad escolar: entre 6 y 18 años" << "\n";
+    cout << "Si=1, No=2" << "\n";
+    cin >> hijos1;
+    if (hijos1 == 1) {
+      cout << "Cuantos hijos en edad escolar tienes:" << "\n";
+      cin >> edescolar;
+      pago = pago + (edescolar * 10);
+    }
+    break;
+  case 3:
+  case 4:
+  case 5:
+   pago = 90;
+    cout << "Tienes hijos en edad escolar: entre 6 y 18 años" << "\n";
+    cout << "Si=1, No=2" << "\n";
+    cin >> hijos1;
+    if (hijos1 == 1) {
+      cout << "Cuantos hijos en edad escolar tienes:" << "\n";
+      cin >> edescolar;
+      pago = pago + (edescolar * 10);
+    }
+  default:
+  if (numhijos>=6) {
+    pago = 120;
+    cout << "Tienes hijos en edad escolar: entre 6 y 18 años" << "\n";
+    cout << "Si=1, No=2" << "\n";
+    cin >> hijos1;
+    if (hijos1 == 1) {
+      cout << "Cuantos hijos en edad escolar tienes:" << "\n";
+      cin >> edescolar;
+      pago = pago + (edescolar * 10);
+    }
+  }
+    break;
+  }
+  cout << "¿Eres viuda?" << "\n";
+  cout << "Si=1, No=2" << "\n";
+  cin >> viuda;
+  if (viuda == 1) {
+    pago = pago + 20;
+  } 
+  } else {
+    cout<<"No participas por las ayudas brindadas por el gobierno."<< "\n";
+  }
+  cout << "El subsidio a recibir es: " << pago;
+  return 0;
+}
