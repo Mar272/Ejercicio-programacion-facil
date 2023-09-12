@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  float metros, pies, sumpulg, sumyard, summet, summill, converpies;
+  cout<<"Ingrese la medida de metros: ";
+  cin>>metros;
+  cout<<"Ingrese la medida de pies: ";
+  cin>>pies;
+  converpies=(metros*3.281)+pies;
+  sumpulg=(converpies*12);
+  sumyard=(converpies/3);
+  summet=(converpies/3.281);
+  summill=(converpies/5280);
+  cout<<"El valor de la suma en pulgadas es: "<<sumpulg<<"\n";
+  cout<<"El valor de la suma en yardas es: "<<sumyard<<"\n";
+  cout<<"El valor de la suma en metros es: "<<summet<<"\n";
+  cout<<"El valor de la suma en millas es: "<<summill<<"\n";
+  return 0;
+}
