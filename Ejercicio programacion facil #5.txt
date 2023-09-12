@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> distancias = {50, 55, 57, 58, 60};
+    int limite = 174;
+    int numCiudades = 3;
+
+    int maxSuma = 0;
+    vector<int> pueblosSeleccionados;
+
+    for (int i = 0; i < numCiudades; ++i) {
+        int maxDistancia = 0;
+        int indiceSeleccionado = -1;
+
+        for (int j = 0; j < distancias.size(); ++j) {
+            if (distancias[j] > maxDistancia) {
+                bool yaSeleccionado = false;
+
+                for (int k : pueblosSeleccionados) {
+                    if (k == j) {
+                        yaSeleccionado = true;
+                        break;
+                    }
+                }
+
+                if (!yaSeleccionado) {
+                    maxDistancia = distancias[j];
+                    indiceSeleccionado = j;
+                }
+            }
+        }
+
+        if (indiceSeleccionado != -1) {
+            pueblosSeleccionados.push_back(indiceSeleccionado);
+            maxSuma += maxDistancia;
+        }
+    }
+
+    cout << "Juan debe visitar los siguientes pueblos para no sobrepasar la máxima distancia:" << endl;
+    for (int i = 0; i < pueblosSeleccionados.size(); ++i) {
+        cout << "Pueblo " << pueblosSeleccionados[i] + 1 << ": " << distancias[pueblosSeleccionados[i]] << " millas." << endl;
+    }
+
+    cout << "La mayor suma de distancias para Juan es: " << maxSuma << " millas." << endl;
+
+    return 0;
+}
