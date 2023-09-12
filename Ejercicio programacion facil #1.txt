@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int minutos, segundos, minutos2, segundos2, tiemposeg, horas, min, seg;
+  cout<<"Ingrese los minutos que tardo el primer corredor: ";
+  cin>>minutos;
+  cout<<"Ingrese los segundos que tardo el primer corredor: ";
+  cin>>segundos;
+  cout<<"Ingrese los minutos que tardo el segundo corredor: ";
+  cin>>minutos2;
+  cout<<"Ingrese los segundos que tardo el segundo corredor: ";
+  cin>>segundos2;
+  tiemposeg=(minutos+minutos2)*60+(segundos+segundos2);
+  horas=(tiemposeg/3600);
+  minutos=(tiemposeg%3600)/60;
+  segundos=(tiemposeg%60);
+  cout<<"Horas: "<<horas<<"\n";
+  cout<<"Minutos: "<<minutos<<"\n";
+  cout<<"segundos: "<<segundos<<"\n";
+  return 0;
+}
