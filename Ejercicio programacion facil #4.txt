@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  float num1, num2, sum, res, mult, div;
+  int opc;
+  cout<<"Bienvenido a la calculadora"<<"\n";
+  cout<<"Ingresa numero 1: ";
+  cin>>num1;
+  cout<<"Ingresa numero 2: ";
+  cin>>num2;
+  cout<<"¿Qué operación deseas realizar?"<<"\n";
+  cout<<"1:suma, 2:resta, 3: multiplicación, 4:división"<<"\n";
+  cin>>opc;
+  switch (opc)
+  {
+  case 1:
+    sum=num1+num2;
+    cout<<"La suma de los dos numeros es: " << sum;
+    break;
+  case 2:
+   res=num1-num2;
+   cout<<"La resta de los dos numeros es: " << res;
+  break;
+  case 3:
+   mult=num1*num2;
+  cout<<"La multiplicación de los dos numeros es: " << mult;
+  break;
+  case 4:
+  if (num2==0)
+  {
+    cout<<"No es posible dividir por 0";
+  } else {
+    div=num1/num2;
+    cout<<"La división de los dos numeros es: " << div;
+  }
+  break;
+  default:
+  cout<<"La opción ingresada no es válida.";
+    break;
+  }
+  return 0;
+}
